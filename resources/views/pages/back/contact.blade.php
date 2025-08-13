@@ -5,7 +5,7 @@
 @section('content')
     <div class="container-fluid p-4">
         <h2 class="mb-4">Messages reçus</h2>
-        <table class="table table-striped align-middle">
+        <table class="table table-striped table-bordered align-middle">
             <thead class="table-dark">
                 <tr>
                     <th>ID</th>

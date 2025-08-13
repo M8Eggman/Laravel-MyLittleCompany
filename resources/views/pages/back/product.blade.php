@@ -8,7 +8,7 @@
             <h2>Liste des produits</h2>
             <a href="{{ route('product_add_back') }}" class="btn btn-primary">Ajouter produit</a>
         </div>
-        <table class="table table-striped align-middle">
+        <table class="table table-striped table-bordered align-middle">
             <thead class="table-dark">
                 <tr>
                     <th>ID</th>
