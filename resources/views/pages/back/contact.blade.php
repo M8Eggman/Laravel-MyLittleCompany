@@ -4,7 +4,9 @@
 
 @section('content')
     <div class="container-fluid p-4">
-        <h2 class="mb-4">Messages reçus</h2>
+        <div class="d-flex justify-content-between align-items-center mb-4">
+            <h2>Messages reçus</h2>
+        </div>
         <table class="table table-striped table-bordered align-middle">
             <thead class="table-dark">
                 <tr>
