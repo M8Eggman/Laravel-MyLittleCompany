@@ -12,7 +12,7 @@
 <body>
     @include("partials.nav_front")
 
-    <div id="root">
+    <div id="root" style="min-height: calc(100vh - 120px)"> {{-- 120px = taille de la nav + du footer --}}
         @yield("content")
     </div>
 

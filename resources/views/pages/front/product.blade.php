@@ -3,7 +3,7 @@
 @section('title', 'Nos produits')
 
 @section('content')
-    <div class="container py-4" style="min-height: calc(100vh - 120px)">
+    <div class="container py-4">
         <h2 class="mb-4">Nos produits</h2>
         <div class="d-flex flex-wrap" style="gap: 2rem;">
             @foreach($produits as $produit)

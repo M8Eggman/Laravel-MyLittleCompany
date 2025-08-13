@@ -12,7 +12,7 @@
 <body>
     @include("partials.nav_back")
 
-    <div id="root">
+    <div id="root" style="min-height: calc(100vh - 60px)"> {{-- 60px = taille de la nav --}}
         @yield("content")
     </div>
 
