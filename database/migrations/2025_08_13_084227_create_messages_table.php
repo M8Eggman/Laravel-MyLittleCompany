@@ -12,13 +12,6 @@ return new class extends Migration {
     {
         Schema::create('messages', function (Blueprint $table) {
             $table->id();
-            $table->string("nom");
-            $table->string("prenom");
-            $table->string("numero_telephone");
-            $table->string("email")->unique();
-            $table->enum('poste', ["Logistique", "Réception", "Comptabilité", "Vente", "Direction"]);
-            $table->enum('role', ["Ouvrier polyvalent", "Employé polyvalent", "Comptable", "Assistant du régional manager", "Régional manager"]);
-            $table->decimal("salaire", 8, 2);
             $table->timestamps();
         });
     }
