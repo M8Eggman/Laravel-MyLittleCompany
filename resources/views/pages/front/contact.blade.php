@@ -3,7 +3,7 @@
 @section('title', 'Contactez-nous')
 
 @section('content')
-    <div class="container py-4 pb-4" style="min-height: calc(100vh - 120px)"> {{-- 120px = taille de la nav + du footer --}}
+    <div class="container py-4" style="min-height: calc(100vh - 120px)"> {{-- 120px = taille de la nav + du footer --}}
         <div class="d-flex align-items-start gap-4">
             <div class="w-50">
                 <img src="/assets/img/office.jpg" alt="Photo d'office d'une entreprise" class="rounded w-100">

@@ -3,7 +3,7 @@
 @section('title', 'Notre équipe')
 
 @section('content')
-    <div class="container py-5" style="min-height: calc(100vh - 120px)">
+    <div class="container py-4" style="min-height: calc(100vh - 120px)">
         <h2 class="mb-4">Notre équipe</h2>
         <div class="row">
             @foreach($employes as $employe)
