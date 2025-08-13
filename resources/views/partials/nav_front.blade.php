@@ -23,6 +23,11 @@
                     <a class="nav-link {{ request()->routeIs('contact_front') ? 'active' : '' }}"
                         href="{{ route("contact_front") }}">Contactez-nous</a>
                 </li>
+                <a href="{{ route('employee_back') }}"
+                    class="btn btn-secondary btn-sm position-absolute end-0 me-4"
+                    style="opacity:0.5; font-size:0.75rem;">
+                    Aller au back
+                </a>
             </ul>
         </div>
     </div>
