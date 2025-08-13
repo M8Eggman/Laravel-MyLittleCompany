@@ -3,7 +3,7 @@
 @section('title', 'Produits')
 
 @section('content')
-    <div class="container py-4">
+    <div class="container-fluid p-4">
         <div class="d-flex justify-content-between align-items-center mb-4">
             <h2>Liste des produits</h2>
             <a href="{{ route('product_add_back') }}" class="btn btn-primary">Ajouter produit</a>
@@ -33,8 +33,7 @@
                         <td>{{ $produit->descriptif }}</td>
                         <td>{{ number_format($produit->prix, 2, ',', ' ') }}</td>
                         <td>
-                            <form action="{{ route('product_destroy_back', $produit->id) }}" method="POST"
-                                onsubmit="return confirm('Voulez-vous vraiment supprimer ce produit ?');">
+                            <form action="{{ route('product_destroy_back', $produit->id) }}" method="POST">
                                 @csrf
                                 @method('DELETE')
                                 <button type="submit" class="btn btn-danger btn-sm">Supprimer</button>

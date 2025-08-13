@@ -21,4 +21,24 @@ class ProductController extends Controller
     {
         return view('pages.back.add_product');
     }
+    public function store(Request $request)
+    {
+        $produit = new Produit();
+        $produit->nom = $request->nom;
+        $produit->type = $request->type;
+        $produit->descriptif = $request->descriptif;
+        $produit->prix = $request->prix;
+        $produit->img = $request->img;
+        $produit->save();
+
+        return redirect()->route('product_back');
+    }
+
+    public function destroy($id)
+    {
+        $produit = Produit::where('id', $id)->first();
+        $produit->delete();
+
+        return redirect()->route('product_back');
+    }
 }

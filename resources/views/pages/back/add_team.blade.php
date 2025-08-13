@@ -6,29 +6,29 @@
     <div class="container py-4">
         <h2 class="mb-4">Ajouter un employé</h2>
 
-        <form action="{{ route('employee_store_back') }}" method="POST" enctype="multipart/form-data">
+        <form action="{{ route('employee_store_back') }}" method="POST" class="d-flex flex-column gap-3">
             @csrf
-            <div class="mb-3">
+            <div>
                 <label for="nom" class="form-label">Nom</label>
                 <input type="text" class="form-control" id="nom" name="nom" required>
             </div>
 
-            <div class="mb-3">
+            <div>
                 <label for="prenom" class="form-label">Prénom</label>
                 <input type="text" class="form-control" id="prenom" name="prenom" required>
             </div>
 
-            <div class="mb-3">
+            <div>
                 <label for="numero_telephone" class="form-label">Numéro de téléphone</label>
                 <input type="text" class="form-control" id="numero_telephone" name="numero_telephone" required>
             </div>
 
-            <div class="mb-3">
+            <div>
                 <label for="email" class="form-label">Email</label>
                 <input type="email" class="form-control" id="email" name="email" required>
             </div>
 
-            <div class="mb-3">
+            <div>
                 <label for="poste" class="form-label">Poste</label>
                 <select class="form-select" id="poste" name="poste" required>
                     <option value="">Sélectionner un poste</option>
@@ -40,7 +40,7 @@
                 </select>
             </div>
 
-            <div class="mb-3">
+            <div>
                 <label for="role" class="form-label">Rôle</label>
                 <select class="form-select" id="role" name="role" required>
                     <option value="">Sélectionner un rôle</option>
@@ -52,12 +52,13 @@
                 </select>
             </div>
 
-            <div class="mb-3">
+            <div>
                 <label for="salaire" class="form-label">Salaire (€)</label>
                 <input type="number" step="0.01" class="form-control" id="salaire" name="salaire" required>
+                <p class="m-0 small text-muted">Maximum 999 999,99 €</p>
             </div>
 
-            <div class="mb-3">
+            <div>
                 <label for="img" class="form-label">Photo de l'employé</label>
                 <input type="text" class="form-control" id="img" name="img" required>
             </div>

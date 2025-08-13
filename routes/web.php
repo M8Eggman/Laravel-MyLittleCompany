@@ -29,6 +29,6 @@ Route::get('/product', [ProductController::class, "index"])->name("product_front
 Route::get('/back/product', [ProductController::class, "index_back"])->name("product_back");
 Route::get('/back/product/add', [ProductController::class, "add_page"])->name("product_add_back");
 // Route Contact pour ajouter/supprimer de la base de données 
-Route::post('/back/product', [ContactController::class, "store"])->name("product_store_front");
-Route::delete('/back/product/{id}', [ContactController::class, "destroy"])->name("product_destroy_back");
+Route::post('/back/product', [ProductController::class, "store"])->name("product_store_back");
+Route::delete('/back/product/{id}', [ProductController::class, "destroy"])->name("product_destroy_back");
 
