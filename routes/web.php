@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ContactController;
 use App\Http\Controllers\FrontController;
 use Illuminate\Support\Facades\Route;
 
@@ -7,7 +8,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [FrontController::class, "home"])->name("home");
 Route::get('/team', [FrontController::class, "home"])->name("team_front");
 Route::get('/product', [FrontController::class, "home"])->name("product_front");
-Route::get('/contact-us', [FrontController::class, "contact"])->name("contact_front");
+// Route contact
+Route::get('/contact-us', [ContactController::class, "contact"])->name("contact_front");
+Route::post('/contact-us', [ContactController::class, "store"])->name("contact_add_front");
 
 // Route back-end
 Route::get('/back/employee', [FrontController::class, "home"])->name("employee_back");

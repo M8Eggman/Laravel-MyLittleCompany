@@ -8,11 +8,15 @@
             <div class="w-50">
                 <img src="/assets/img/office.jpg" alt="Photo d'office d'une entreprise" class="rounded w-100">
             </div>
+
             <div class="w-50">
+                @if(session('success'))
+                    <div class="alert alert-success">{{ session('success') }}</div>
+                @endif
                 <div class="shadow-sm">
                     <div class="border rounded p-3">
                         <h3 class="mb-4">Contactez-nous</h3>
-                        <form action="" method="POST" class="d-flex flex-column gap-3">
+                        <form action="{{ route("contact_add_front") }}" method="POST" class="d-flex flex-column gap-3">
                             @csrf
                             <div>
                                 <label for="nom" class="form-label">Nom</label>
@@ -40,8 +44,8 @@
                             </div>
 
                             <div>
-                                <label for="content" class="form-label">Message</label>
-                                <textarea style="resize: none" class="form-control" id="content" name="content" rows="4"
+                                <label for="message" class="form-label">Message</label>
+                                <textarea style="resize: none" class="form-control" id="message" name="message" rows="4"
                                     required></textarea>
                             </div>
 
