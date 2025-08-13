@@ -5,9 +5,9 @@
 @section('content')
     <div class="container py-4">
         <h2 class="mb-4">Nos produits</h2>
-        <div class="d-flex flex-wrap" style="gap: 2rem;">
+        <div class="row">
             @foreach($produits as $produit)
-                <div style="width: 300px;">
+                <div class="col-3 mb-4">
                     <div class="card h-100 shadow-sm">
                         <img src="{{ $produit->img }}" class="card-img-top" alt="">
                         <div class="card-body">
