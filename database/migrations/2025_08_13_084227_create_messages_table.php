@@ -12,6 +12,12 @@ return new class extends Migration {
     {
         Schema::create('messages', function (Blueprint $table) {
             $table->id();
+            $table->string("nom");
+            $table->string("prenom");
+            $table->string("tel");
+            $table->string("mail");
+            $table->string("sujet", 50);
+            $table->longText("message");
             $table->timestamps();
         });
     }
