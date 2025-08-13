@@ -29,10 +29,10 @@
 
     <div class="container py-4">
         {{-- Section Services --}}
-        <div class="container pt-4">
+        <div class="container-fluid pt-4">
             <h2 class="mb-4">Nos services</h2>
             <div class="d-flex flex-wrap" style="gap: 2rem;">
-                <div class="card shadow-sm" style="width: 18rem;">
+                <div class="card shadow-sm" style="flex: 1;">
                     <div class="card-body text-center">
                         <h5 class="card-title">Conseil personnalisé</h5>
                         <p class="card-text">Nous vous accompagnons pour choisir les meilleurs produits adaptés à vos
@@ -40,14 +40,14 @@
                         </p>
                     </div>
                 </div>
-                <div class="card shadow-sm" style="width: 18rem;">
+                <div class="card shadow-sm" style="flex: 1;">
                     <div class="card-body text-center">
                         <h5 class="card-title">Livraison rapide</h5>
                         <p class="card-text">Vos commandes sont préparées et livrées en un temps record pour votre confort.
                         </p>
                     </div>
                 </div>
-                <div class="card shadow-sm" style="width: 18rem;">
+                <div class="card shadow-sm" style="flex: 1;">
                     <div class="card-body text-center">
                         <h5 class="card-title">Support client 24/7</h5>
                         <p class="card-text">Une équipe disponible à tout moment pour répondre à toutes vos questions et
@@ -58,11 +58,11 @@
         </div>
 
         {{-- Section Produits (3 premiers) --}}
-        <div class="container pt-4">
+        <div class="container-fluid pt-4">
             <h2 class="mb-4">Nos produits</h2>
-            <div class="d-flex flex-wrap" style="gap: 2rem;">
+            <div class="row">
                 @foreach($produits->take(3) as $produit)
-                    <div style="width: 300px;">
+                    <div class="col-4">
                         <div class="card h-100 shadow-sm">
                             <img src="{{ $produit->img }}" class="card-img-top" alt="{{ $produit->nom }}">
                             <div class="card-body">
@@ -82,14 +82,14 @@
         </div>
 
         {{-- Section Équipe (3 premiers) --}}
-        <div class="container pt-4">
+        <div class="container-fluid pt-4">
             <h2 class="mb-4">Notre équipe</h2>
             <div class="row">
                 @foreach($employes->take(3) as $employe)
-                    <div class="col-3 mb-4">
-                        <div class="card h-100 shadow-sm" style="width: 18rem;">
-                            <img src="{{ $employe->photo }}" class="card-img-top" alt="{{ $employe->prenom }}">
-                            <div class="card-body">
+                    <div class="col-4">
+                        <div class="card h-100 shadow-sm p-4">
+                            <img src="{{ $employe->img }}" class="card-img-top" alt="{{ $employe->prenom }}">
+                            <div class="card-body p-0">
                                 <h5 class="card-title">{{ $employe->prenom }} {{ $employe->nom }}</h5>
                                 <p class="card-text">{{ $employe->poste }}</p>
                             </div>
