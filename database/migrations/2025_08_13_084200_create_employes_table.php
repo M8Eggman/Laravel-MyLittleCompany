@@ -19,6 +19,7 @@ return new class extends Migration {
             $table->enum('poste', ["Logistique", "Réception", "Comptabilité", "Vente", "Direction"]);
             $table->enum('role', ["Ouvrier polyvalent", "Employé polyvalent", "Comptable", "Assistant du régional manager", "Régional manager"]);
             $table->decimal("salaire", 8, 2);
+            $table->text("photo");
             $table->timestamps();
         });
     }
