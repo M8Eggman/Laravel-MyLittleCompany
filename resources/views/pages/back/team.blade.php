@@ -8,7 +8,7 @@
             <h2>Liste des employés</h2>
             <a href="{{ route('employee_add_back') }}" class="btn btn-primary">Ajouter un employé</a>
         </div>
-        <table class="table table-striped table-hover align-middle">
+        <table class="table table-striped align-middle">
             <thead class="table-dark">
                 <tr>
                     <th>ID</th>

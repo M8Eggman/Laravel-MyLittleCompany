@@ -13,18 +13,22 @@ Route::get('/', [HomeController::class, "index"])->name("home");
 Route::get('/team', [TeamController::class, "index"])->name("team_front");
 Route::get('/back/team', [TeamController::class, "index_back"])->name("employee_back");
 Route::get('/back/team/add', [TeamController::class, "add_page"])->name("employee_add_back");
-//Route Home pour ajouter/supprimer de la base de données 
+// Route Home pour ajouter/supprimer de la base de données 
 Route::post('/back/team', [TeamController::class, "store"])->name("employee_store_back");
 Route::delete('/back/team/{id}', [TeamController::class, "destroy"])->name("employee_destroy_back");
 
-// Route contact
+// Route contact pour les pages
 Route::get('/contact-us', [ContactController::class, "contact"])->name("contact_front");
-Route::post('/contact-us', [ContactController::class, "store"])->name("contact_store_front");
 Route::get('/back/contact-us', [ContactController::class, "index_back"])->name("contact_back");
+// Route Contact pour ajouter/supprimer de la base de données 
+Route::post('/contact-us', [ContactController::class, "store"])->name("contact_store_front");
 Route::delete('/back/contact-us/{id}', [ContactController::class, "destroy"])->name("contact_destroy_back");
 
-// Route produit
+// Route contact pour les pages
 Route::get('/product', [ProductController::class, "index"])->name("product_front");
-Route::get('/back/product', [HomeController::class, "index"])->name("product_back");
-Route::get('/back/product/add', [HomeController::class, "index"])->name("product_add_back");
+Route::get('/back/product', [ProductController::class, "index_back"])->name("product_back");
+Route::get('/back/product/add', [ProductController::class, "add_page"])->name("product_add_back");
+// Route Contact pour ajouter/supprimer de la base de données 
+Route::post('/back/product', [ContactController::class, "store"])->name("product_store_front");
+Route::delete('/back/product/{id}', [ContactController::class, "destroy"])->name("product_destroy_back");
 
