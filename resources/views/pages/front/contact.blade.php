@@ -16,7 +16,7 @@
                 <div class="shadow-sm">
                     <div class="border rounded p-3">
                         <h3 class="mb-4">Contactez-nous</h3>
-                        <form action="{{ route("contact_add_front") }}" method="POST" class="d-flex flex-column gap-3">
+                        <form action="{{ route("contact_store_front") }}" method="POST" class="d-flex flex-column gap-3">
                             @csrf
                             <div>
                                 <label for="nom" class="form-label">Nom</label>

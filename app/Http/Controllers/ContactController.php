@@ -24,4 +24,16 @@ class ContactController extends Controller
 
         return redirect()->route('contact_front')->with('success', 'Votre message a été envoyé !');
     }
+    public function index_back()
+    {
+        $messages = Message::all();
+        return view('pages.back.contact', compact("messages"));
+    }
+    public function destroy($id)
+    {
+        $message = Message::where("id", $id);
+        $message->delete();
+
+        return redirect()->route("contact_back");
+    }
 }

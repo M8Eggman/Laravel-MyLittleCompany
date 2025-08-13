@@ -19,8 +19,9 @@ Route::delete('/back/team/{id}', [TeamController::class, "destroy"])->name("empl
 
 // Route contact
 Route::get('/contact-us', [ContactController::class, "contact"])->name("contact_front");
-Route::post('/contact-us', [ContactController::class, "store"])->name("contact_add_front");
-Route::get('/back/contact-us', [HomeController::class, "index"])->name("contact_back");
+Route::post('/contact-us', [ContactController::class, "store"])->name("contact_store_front");
+Route::get('/back/contact-us', [ContactController::class, "index_back"])->name("contact_back");
+Route::delete('/back/contact-us/{id}', [ContactController::class, "destroy"])->name("contact_destroy_back");
 
 // Route produit
 Route::get('/product', [ProductController::class, "index"])->name("product_front");
