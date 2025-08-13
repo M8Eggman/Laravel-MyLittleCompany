@@ -1,2 +1,8 @@
-@extends("layouts/front")
+@extends("layouts.front")
+
+@section("title", "Accueil")
+
+@section("content")
+
+@endsection
 

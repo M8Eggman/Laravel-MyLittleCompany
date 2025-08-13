@@ -5,17 +5,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>@yield('title', 'Projet My Little Company')</title>
     @vite(["resources/css/app.css", "resources/js/app.js"])
 </head>
 
 <body>
-    @include("partials/nav_back")
+    @include("partials.nav_back")
 
-    <div>
+    <div id="root">
         @yield("content")
     </div>
-    
+
 </body>
 
 </html>

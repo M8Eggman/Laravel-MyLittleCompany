@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [FrontController::class, "home"])->name("home");
 Route::get('/team', [FrontController::class, "home"])->name("team_front");
 Route::get('/product', [FrontController::class, "home"])->name("product_front");
-Route::get('/contact-us', [FrontController::class, "home"])->name("contact_front");
+Route::get('/contact-us', [FrontController::class, "contact"])->name("contact_front");
 
 // Route back-end
 Route::get('/back/employee', [FrontController::class, "home"])->name("employee_back");
