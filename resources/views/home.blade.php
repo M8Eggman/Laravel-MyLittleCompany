@@ -89,7 +89,7 @@
                     <div class="col-4">
                         <div class="card h-100 shadow-sm p-4">
                             <img src="{{ $employe->img }}" class="card-img-top" alt="{{ $employe->prenom }}">
-                            <div class="card-body p-0">
+                            <div class="card-body p-0 pt-3">
                                 <h5 class="card-title">{{ $employe->prenom }} {{ $employe->nom }}</h5>
                                 <p class="card-text">{{ $employe->poste }}</p>
                             </div>
