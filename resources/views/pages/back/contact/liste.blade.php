@@ -27,7 +27,10 @@
                         <td>{{ $message->created_at->format('d/m/Y H:i') }}</td>
                         <td>{{ $message->mail }}</td>
                         <td>
-                            <form action="{{ route('contact_destroy_back', $message->id) }}" method="POST">
+                            <a class="btn btn-info btn-sm d-inline-block me-3"
+                                href="{{ route("contact_show_back", $message->id) }}">Voir</a>
+                            <form action="{{ route('contact_destroy_back', $message->id) }}" method="POST"
+                                class="d-inline-block">
                                 @csrf
                                 @method('DELETE')
                                 <button type="submit" class="btn btn-danger btn-sm">Supprimer</button>

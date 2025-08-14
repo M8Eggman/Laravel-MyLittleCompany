@@ -39,7 +39,10 @@
                         <td>{{ $employe->role }}</td>
                         <td>{{ number_format($employe->salaire, 2, ',', ' ') }}</td>
                         <td>
-                            <form action="{{ route('employee_destroy_back', $employe->id) }}" method="POST">
+                            <a class="btn btn-info btn-sm d-inline-block me-3"
+                                href="{{ route("employee_show_back", $employe->id) }}">Voir</a>
+                            <form action="{{ route('employee_destroy_back', $employe->id) }}" method="POST"
+                                class="d-inline-block">
                                 @csrf
                                 @method('DELETE')
                                 <button type="submit" class="btn btn-danger btn-sm">Virer</button>

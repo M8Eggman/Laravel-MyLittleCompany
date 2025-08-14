@@ -33,7 +33,10 @@
                         <td>{{ $produit->descriptif }}</td>
                         <td>{{ number_format($produit->prix, 2, ',', ' ') }}</td>
                         <td>
-                            <form action="{{ route('product_destroy_back', $produit->id) }}" method="POST">
+                            <a class="btn btn-info btn-sm d-inline-block me-3"
+                                href="{{ route("product_show_back", $produit->id) }}">Voir</a>
+                            <form action="{{ route('product_destroy_back', $produit->id) }}" method="POST"
+                                class="d-inline-block">
                                 @csrf
                                 @method('DELETE')
                                 <button type="submit" class="btn btn-danger btn-sm">Supprimer</button>

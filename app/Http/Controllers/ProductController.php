@@ -15,11 +15,11 @@ class ProductController extends Controller
     public function index_back()
     {
         $produits = Produit::all();
-        return view('pages.back.product', compact('produits'));
+        return view('pages.back.product.liste', compact('produits'));
     }
     public function add_page()
     {
-        return view('pages.back.add_product');
+        return view('pages.back.product.add');
     }
     public function store(Request $request)
     {
@@ -40,5 +40,10 @@ class ProductController extends Controller
         $produit->delete();
 
         return redirect()->route('product_back');
+    }
+    public function show($id)
+    {
+        $product = produit::where("id", $id)->first();
+        return view("pages.back.product.show", compact("product"));
     }
 }

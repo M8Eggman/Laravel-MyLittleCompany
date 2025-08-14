@@ -27,7 +27,7 @@ class ContactController extends Controller
     public function index_back()
     {
         $messages = Message::all();
-        return view('pages.back.contact', compact("messages"));
+        return view('pages.back.contact.liste', compact("messages"));
     }
     public function destroy($id)
     {
@@ -35,5 +35,10 @@ class ContactController extends Controller
         $message->delete();
 
         return redirect()->route("contact_back");
+    }
+    public function show($id)
+    {
+        $message = Message::where("id", $id)->first();
+        return view("pages.back.contact.show", compact("message"));
     }
 }

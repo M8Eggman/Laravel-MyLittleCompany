@@ -15,11 +15,11 @@ class TeamController extends Controller
     public function index_back()
     {
         $employes = Employe::all();
-        return view('pages.back.team', compact("employes"));
+        return view('pages.back.team.liste', compact("employes"));
     }
     public function add_page()
     {
-        return view('pages.back.add_team');
+        return view('pages.back.team.add');
     }
     public function store(Request $request)
     {
@@ -42,5 +42,10 @@ class TeamController extends Controller
         $employe->delete();
 
         return redirect()->route("employee_back");
+    }
+    public function show($id)
+    {
+        $employe = Employe::where("id", $id)->first();
+        return view("pages.back.team.show", compact("employe"));
     }
 }
