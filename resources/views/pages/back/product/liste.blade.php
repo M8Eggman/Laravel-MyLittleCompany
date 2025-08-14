@@ -35,6 +35,8 @@
                         <td>
                             <a class="btn btn-info btn-sm d-inline-block me-3"
                                 href="{{ route("product_show_back", $produit->id) }}">Voir</a>
+                            <a class="btn btn-warning btn-sm d-inline-block me-3"
+                                href="{{ route("product_edit_back", $produit->id) }}">Modifier</a>
                             <form action="{{ route('product_destroy_back', $produit->id) }}" method="POST"
                                 class="d-inline-block">
                                 @csrf

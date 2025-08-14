@@ -48,4 +48,36 @@ class TeamController extends Controller
         $employe = Employe::where("id", $id)->first();
         return view("pages.back.team.show", compact("employe"));
     }
+    public function edit($id)
+    {
+        $employe = Employe::where("id", $id)->first();
+        return view("pages.back.team.edit", compact("employe"));
+    }
+    public function update($id, Request $request)
+    {
+        Employe::where("id", $id)->update([
+            "nom" => $request->nom,
+            "prenom" => $request->prenom,
+            "numero_telephone" => $request->numero_telephone,
+            "email" => $request->email,
+            "poste" => $request->poste,
+            "role" => $request->role,
+            "salaire" => $request->salaire,
+            "img" => $request->img,
+            "updated_at" => now(),
+        ]);
+        // Deuxième méthode
+        // $employe = Employe::findOrFail($id);
+        // $employe->update($request->only([
+        //     "nom",
+        //     "prenom",
+        //     "numero_telephone",
+        //     "email",
+        //     "poste",
+        //     "role",
+        //     "salaire",
+        //     "img"
+        // ]));
+        return redirect()->route("employee_show_back", $id);
+    }
 }

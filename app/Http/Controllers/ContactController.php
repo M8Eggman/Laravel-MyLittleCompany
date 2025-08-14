@@ -41,4 +41,22 @@ class ContactController extends Controller
         $message = Message::where("id", $id)->first();
         return view("pages.back.contact.show", compact("message"));
     }
+    public function edit($id)
+    {
+        $message = Message::where("id", $id)->first();
+        return view("pages.back.contact.edit", compact("message"));
+    }
+    public function update($id, Request $request)
+    {
+        Message::where("id", $id)->update([
+            "nom" => $request->nom,
+            "prenom" => $request->prenom,
+            "tel" => $request->tel,
+            "mail" => $request->mail,
+            "sujet" => $request->sujet,
+            "message" => $request->message,
+            "updated_at" => now()
+        ]);
+        return redirect()->route("contact_show_back", $id);
+    }
 }

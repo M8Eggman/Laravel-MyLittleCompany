@@ -41,6 +41,8 @@
                         <td>
                             <a class="btn btn-info btn-sm d-inline-block me-3"
                                 href="{{ route("employee_show_back", $employe->id) }}">Voir</a>
+                            <a class="btn btn-warning btn-sm d-inline-block me-3"
+                                href="{{ route("employee_edit_back", $employe->id) }}">Modifier</a>
                             <form action="{{ route('employee_destroy_back', $employe->id) }}" method="POST"
                                 class="d-inline-block">
                                 @csrf

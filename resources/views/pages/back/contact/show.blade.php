@@ -8,7 +8,6 @@
             <h2>Détail du message</h2>
             <a href="{{ route('contact_back') }}" class="btn btn-secondary">Retour à la liste</a>
         </div>
-
         <div class="card shadow-sm">
             <div class="card-body">
                 <h5 class="card-title">Message de {{ $message->prenom }} {{ $message->nom }}</h5>
@@ -20,6 +19,8 @@
                     {{ $message->message }}
                 </div>
                 <p class="text-muted mt-3"><small>Envoyé le : {{ $message->created_at->format('d/m/Y H:i') }}</small></p>
+                <a class="btn btn-warning d-inline-block me-3"
+                    href="{{ route("contact_edit_back", $message->id) }}">Modifier</a>
                 <form action="{{ route('contact_show_back', $message->id) }}" method="POST" class="mt-3">
                     @csrf
                     @method('DELETE')

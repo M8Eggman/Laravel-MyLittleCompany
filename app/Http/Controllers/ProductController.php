@@ -43,7 +43,24 @@ class ProductController extends Controller
     }
     public function show($id)
     {
-        $product = produit::where("id", $id)->first();
+        $product = Produit::where("id", $id)->first();
         return view("pages.back.product.show", compact("product"));
+    }
+    public function edit($id)
+    {
+        $product = Produit::where("id", $id)->first();
+        return view("pages.back.product.edit", compact("product"));
+    }
+    public function update($id, Request $request)
+    {
+        Produit::where("id", $id)->update([
+            "nom" => $request->nom,
+            "type" => $request->type,
+            "descriptif" => $request->descriptif,
+            "img" => $request->img,
+            "prix" => $request->prix,
+            "updated_at" => now()
+        ]);
+        return redirect()->route("product_show_back", $id);
     }
 }

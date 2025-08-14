@@ -29,6 +29,8 @@
                         <td>
                             <a class="btn btn-info btn-sm d-inline-block me-3"
                                 href="{{ route("contact_show_back", $message->id) }}">Voir</a>
+                            <a class="btn btn-warning btn-sm d-inline-block me-3"
+                                href="{{ route("contact_edit_back", $message->id) }}">Modifier</a>
                             <form action="{{ route('contact_destroy_back', $message->id) }}" method="POST"
                                 class="d-inline-block">
                                 @csrf
