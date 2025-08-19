@@ -16,7 +16,8 @@
             </div>
         @endif
 
-        <form action="{{ route('employee_update_back', $employe->id) }}" method="POST" class="d-flex flex-column gap-3">
+        <form action="{{ route('employee_update_back', $employe->id) }}" method="POST" enctype="multipart/form-data"
+            class="d-flex flex-column gap-3">
             @csrf
             @method('PUT')
 
@@ -72,7 +73,7 @@
 
             <div>
                 <label for="img" class="form-label">Image</label>
-                <input type="text" class="form-control" id="img" name="img" value="{{ old('img', $employe->img) }}"
+                <input type="file" class="form-control" id="img" name="img" value="{{ old('img', $employe->img) }}"
                     required>
             </div>
 

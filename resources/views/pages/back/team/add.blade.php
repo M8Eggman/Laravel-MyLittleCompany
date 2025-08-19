@@ -11,27 +11,28 @@
             @csrf
             <div>
                 <label for="nom" class="form-label">Nom</label>
-                <input type="text" class="form-control" id="nom" name="nom" required>
+                <input type="text" class="form-control" id="nom" name="nom" value="{{ old("nom") }}" required>
             </div>
 
             <div>
                 <label for="prenom" class="form-label">Prénom</label>
-                <input type="text" class="form-control" id="prenom" name="prenom" required>
+                <input type="text" class="form-control" id="prenom" name="prenom" value="{{ old("prenom") }}" required>
             </div>
 
             <div>
                 <label for="numero_telephone" class="form-label">Numéro de téléphone</label>
-                <input type="text" class="form-control" id="numero_telephone" name="numero_telephone" required>
+                <input type="text" class="form-control" id="numero_telephone" name="numero_telephone"
+                    value="{{ old("numero_telephone") }}" required>
             </div>
 
             <div>
                 <label for="email" class="form-label">Email</label>
-                <input type="email" class="form-control" id="email" name="email" required>
+                <input type="email" class="form-control" id="email" name="email" value="{{ old("email") }}" required>
             </div>
 
             <div>
                 <label for="poste" class="form-label">Poste</label>
-                <select class="form-select" id="poste" name="poste" required>
+                <select class="form-select" id="poste" name="poste" value="{{ old("poste") }}" required>
                     <option value="">Sélectionner un poste</option>
                     <option value="Logistique">Logistique</option>
                     <option value="Réception">Réception</option>
@@ -43,7 +44,7 @@
 
             <div>
                 <label for="role" class="form-label">Rôle</label>
-                <select class="form-select" id="role" name="role" required>
+                <select class="form-select" id="role" name="role" value="{{ old("role") }}" required>
                     <option value="">Sélectionner un rôle</option>
                     <option value="Ouvrier polyvalent">Ouvrier polyvalent</option>
                     <option value="Employé polyvalent">Employé polyvalent</option>
@@ -55,13 +56,14 @@
 
             <div>
                 <label for="salaire" class="form-label">Salaire (€)</label>
-                <input type="number" step="0.01" class="form-control" id="salaire" name="salaire" required>
+                <input type="number" step="0.01" class="form-control" id="salaire" name="salaire"
+                    value="{{ old("number") }}" required>
                 <p class="m-0 small text-muted">Maximum 999 999,99 €</p>
             </div>
 
             <div>
                 <label for="img" class="form-label">Photo de l'employé</label>
-                <input type="file" class="form-control" id="img" name="img" required>
+                <input type="file" class="form-control" id="img" name="img" value="{{ old("img") }}" required>
             </div>
 
             <button type="submit" class="btn btn-primary">Ajouter</button>

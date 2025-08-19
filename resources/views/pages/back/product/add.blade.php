@@ -22,30 +22,33 @@
 
             <div>
                 <label for="nom" class="form-label">Nom du produit</label>
-                <input type="text" class="form-control" id="nom" name="nom" maxlength="70" required>
+                <input type="text" class="form-control" id="nom" name="nom" maxlength="70" value="{{ old("nom") }}"
+                    required>
                 <p class="m-0 small text-muted">Maximum 70 caractères</p>
             </div>
 
             <div>
                 <label for="type" class="form-label">Type</label>
-                <input type="text" class="form-control" id="type" name="type" maxlength="30" required>
+                <input type="text" class="form-control" id="type" name="type" maxlength="30" value="{{ old("type") }}"
+                    required>
                 <p class="m-0 small text-muted">Maximum 30 caractères</p>
             </div>
 
             <div>
                 <label for="descriptif" class="form-label">Descriptif</label>
-                <input type="text" class="form-control" id="descriptif" name="descriptif" maxlength="50" required>
+                <input type="text" class="form-control" id="descriptif" name="descriptif" maxlength="50"
+                    value="{{ old("descriptif") }}" required>
                 <p class="m-0 small text-muted">Maximum 50 caractères</p>
             </div>
 
             <div>
                 <label for="prix" class="form-label">Prix (€)</label>
-                <input type="number" class="form-control" id="prix" name="prix" required>
+                <input type="number" class="form-control" id="prix" name="prix" value="{{ old("prix") }}" required>
             </div>
 
             <div>
                 <label for="img" class="form-label">Image du produit</label>
-                <input type="file" class="form-control" id="img" name="img" required>
+                <input type="file" class="form-control" id="img" name="img" value="{{ old("img") }}" required>
             </div>
 
             <button type="submit" class="btn btn-primary">Ajouter</button>

@@ -16,7 +16,8 @@
             </div>
         @endif
 
-        <form action="{{ route('product_update_back', $product->id) }}" method="POST" class="d-flex flex-column gap-3">
+        <form action="{{ route('product_update_back', $product->id) }}" method="POST" enctype="multipart/form-data"
+            class="d-flex flex-column gap-3">
             @csrf
             @method('PUT')
 
@@ -46,7 +47,7 @@
 
             <div>
                 <label for="img" class="form-label">Image</label>
-                <input type="text" class="form-control" id="img" name="img" value="{{ old('img', $product->img) }}"
+                <input type="file" class="form-control" id="img" name="img" value="{{ old('img', $product->img) }}"
                     required>
             </div>
 
