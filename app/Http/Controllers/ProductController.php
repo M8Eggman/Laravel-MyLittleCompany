@@ -28,8 +28,14 @@ class ProductController extends Controller
         $produit->type = $request->type;
         $produit->descriptif = $request->descriptif;
         $produit->prix = $request->prix;
-        $produit->img = $request->img;
-        $produit->save();
+
+        if ($request->hasFile("img")) {
+            $file = $request->file("img");
+            $file_name = time() . "_" . $file->getClientOriginalName();
+            $file_path = $file->storeAs("produits", $file_name, "public");
+            $produit->img = $file_path;
+            $produit->save();
+        }
 
         return redirect()->route('product_back');
     }

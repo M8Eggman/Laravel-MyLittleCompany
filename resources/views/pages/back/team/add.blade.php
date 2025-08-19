@@ -6,7 +6,8 @@
     <div class="container py-4">
         <h2 class="mb-4">Ajouter un employé</h2>
 
-        <form action="{{ route('employee_store_back') }}" method="POST" class="d-flex flex-column gap-3">
+        <form action="{{ route('employee_store_back') }}" method="POST" enctype="multipart/form-data"
+            class="d-flex flex-column gap-3">
             @csrf
             <div>
                 <label for="nom" class="form-label">Nom</label>
@@ -60,7 +61,7 @@
 
             <div>
                 <label for="img" class="form-label">Photo de l'employé</label>
-                <input type="text" class="form-control" id="img" name="img" required>
+                <input type="file" class="form-control" id="img" name="img" required>
             </div>
 
             <button type="submit" class="btn btn-primary">Ajouter</button>

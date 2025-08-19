@@ -16,7 +16,8 @@
             </div>
         @endif
 
-        <form action="{{ route('product_store_back') }}" method="POST" class="d-flex flex-column gap-3">
+        <form action="{{ route('product_store_back') }}" method="POST" enctype="multipart/form-data"
+            class="d-flex flex-column gap-3">
             @csrf
 
             <div>
@@ -44,7 +45,7 @@
 
             <div>
                 <label for="img" class="form-label">Image du produit</label>
-                <input type="text" class="form-control" id="img" name="img" required>
+                <input type="file" class="form-control" id="img" name="img" required>
             </div>
 
             <button type="submit" class="btn btn-primary">Ajouter</button>

@@ -4,6 +4,7 @@ namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Str;
+use Storage;
 
 class EmployeFactory extends Factory
 {
@@ -14,6 +15,8 @@ class EmployeFactory extends Factory
         $postes = ["Logistique", "Réception", "Comptabilité", "Vente", "Direction"];
         $roles = ["Ouvrier polyvalent", "Employé polyvalent", "Comptable", "Assistant du régional manager", "Régional manager"];
 
+        $images = Storage::disk('public')->files('employes');
+
         return [
             'nom' => $this->faker->lastName(),
             'prenom' => $this->faker->firstName(),
@@ -22,7 +25,7 @@ class EmployeFactory extends Factory
             'poste' => $this->faker->randomElement($postes),
             'role' => $this->faker->randomElement($roles),
             'salaire' => $this->faker->randomFloat(2, 1000, 8000),
-            'img' => 'https://picsum.photos/seed/' . $this->faker->unique()->numberBetween(1, 1000) . '/200/200'
+            'img' => $this->faker->randomElement($images)
         ];
     }
 }

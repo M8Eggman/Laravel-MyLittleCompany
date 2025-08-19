@@ -31,8 +31,14 @@ class TeamController extends Controller
         $employe->poste = $request->poste;
         $employe->role = $request->role;
         $employe->salaire = $request->salaire;
-        $employe->img = $request->img;
-        $employe->save();
+        
+        if ($request->hasFile("img")) {
+            $file = $request->file("img");
+            $file_name = time() . "_" . $file->getClientOriginalName();
+            $file_path = $file->storeAs("employes", $file_name, "public");
+            $employe->img = $file_path;
+            $employe->save();
+        }
 
         return redirect()->route("employee_back");
     }

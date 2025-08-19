@@ -25,7 +25,7 @@
                     <tr>
                         <td>{{ $produit->id }}</td>
                         <td>
-                            <img src="{{ $produit->img }}" alt="{{ $produit->nom }}"
+                            <img src="{{ asset('storage/' . $produit->img) }}" alt=""
                                 style="width:50px; height:50px; object-fit:cover; border-radius:5px;">
                         </td>
                         <td>{{ $produit->nom }}</td>

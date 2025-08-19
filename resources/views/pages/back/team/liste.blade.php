@@ -28,7 +28,7 @@
                     <tr>
                         <td>{{ $employe->id }}</td>
                         <td>
-                            <img src="{{ $employe->img }}" alt="{{ $employe->nom }}"
+                            <img src="{{ asset('storage/' . $employe->img) }}" alt=""
                                 style="width:50px; height:50px; object-fit:cover; border-radius:50%;">
                         </td>
                         <td>{{ $employe->nom }}</td>

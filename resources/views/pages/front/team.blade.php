@@ -9,7 +9,7 @@
             @foreach($employes as $employe)
                 <div class="col-3 mb-4">
                     <div class="card h-100 shadow-sm">
-                        <img src="{{ $employe->img }}" class="card-img-top" alt="">
+                        <img src="{{ asset('storage/' . $employe->img) }}" class="card-img-top" alt="">
                         <div class="card-body">
                             <h5 class="card-title">{{ $employe->prenom }} {{ $employe->nom }}</h5>
                             <p class="card-text">{{ $employe->poste }}</p>
