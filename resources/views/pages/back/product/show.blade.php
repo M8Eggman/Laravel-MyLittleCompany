@@ -11,7 +11,7 @@
         <div class="card shadow-sm">
             <div class="card-body">
                 <div class="d-flex align-items-center mb-3">
-                    <img src="{{ $product->img }}" alt="" class="rounded me-3"
+                    <img src="{{ asset('storage/' . $product->img) }}" alt="" class="rounded me-3"
                         style="width:100px; height:100px; object-fit:cover;">
                     <h5 class="card-title">{{ $product->nom }}</h5>
                 </div>

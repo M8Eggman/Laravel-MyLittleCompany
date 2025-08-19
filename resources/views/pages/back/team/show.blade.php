@@ -11,7 +11,7 @@
         <div class="card shadow-sm">
             <div class="card-body">
                 <div class="d-flex align-items-center mb-3">
-                    <img src="{{ $employe->img }}" alt="{{ $employe->prenom }}" class="rounded me-3"
+                    <img src="{{ asset('storage/' . $employe->img) }}" alt="" class="rounded me-3"
                         style="width:100px; height:100px; object-fit:cover;">
                     <h5 class="card-title">{{ $employe->prenom }} {{ $employe->nom }}</h5>
                 </div>
