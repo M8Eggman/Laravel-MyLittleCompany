@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Produit;
 use Illuminate\Http\Request;
+use Str;
 
 class ProductController extends Controller
 {
@@ -31,7 +32,10 @@ class ProductController extends Controller
 
         if ($request->hasFile("img")) {
             $file = $request->file("img");
-            $file_name = time() . "_" . $file->getClientOriginalName();
+            // Récupère le nom du fichier sans l'extension
+            $original_name = pathinfo($file->getClientOriginalName(), PATHINFO_FILENAME);
+            // Concatène: la date d'aujourd'hui, un id unique, le nom original url friendly et l'extension original.
+            $file_name = date('Y_m_d_His') . '_' . uniqid() . '_' . Str::slug($original_name) . "." . $file->getClientOriginalExtension();
             $file_path = $file->storeAs("produits", $file_name, "public");
             $produit->img = $file_path;
             $produit->save();
